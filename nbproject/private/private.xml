@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IBoard.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Position.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/BattleshipAgain.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IGameControl.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Ship.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/CellStatus.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/implementations/ListBoard.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Cell.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IPlayer.java</file>
+            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/implementations/HashMapBoard.java</file>
+        </group>
+    </open-files>
+</project-private>
