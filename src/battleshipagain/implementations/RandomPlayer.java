@@ -23,7 +23,7 @@ public class RandomPlayer implements IPlayer{
     @Override
     public void placeShips(List<Ship> ships, IBoard board) {
         for (int i = 0; i < ships.size(); i++) {
-            board.placeShip(new Position(0, i), ships.get(i), Boolean.TRUE);
+            board.placeShip(new Position(0, i), ships.get(i), true);
         }
     }
 
@@ -34,7 +34,12 @@ public class RandomPlayer implements IPlayer{
 
     @Override
     public void endGame(int result) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (result == 0) {
+            System.out.println("It was a draw somehow");
+        } else {
+            System.out.println("Player " + result  +" won");
+        }
+        
     }
     
 }

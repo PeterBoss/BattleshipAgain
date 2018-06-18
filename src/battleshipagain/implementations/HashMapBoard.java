@@ -15,7 +15,7 @@ public class HashMapBoard implements IBoard {
 
     public final int xSize;
     public final int ySize;
-    private HashMap<Position, Integer> board = new HashMap();
+    private final HashMap<Position, Integer> board = new HashMap();
 
     public HashMapBoard(int xSize, int ySize) {
         this.xSize = xSize;
@@ -76,11 +76,11 @@ public class HashMapBoard implements IBoard {
     }
 
     public void printBoard() {
-        int[][] test = new int[10][10];
+        int[][] test = new int[xSize][ySize];
         board.forEach((k, v) -> test[k.x][k.y] = v);
-        for (int[] a : test) {
-            for (int i : a) {
-                System.out.print(" " + i);
+        for (int[] row : test) {
+            for (int val : row) {
+                System.out.print(" " + val);
             }
             System.out.println("");
         }

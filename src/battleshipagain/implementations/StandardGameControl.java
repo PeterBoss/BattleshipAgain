@@ -15,17 +15,15 @@ import java.util.List;
 public class StandardGameControl implements IGameControl{
 
     
-    private List<Ship> ships;
-    private int xSize;
-    private int ySize;
+    private final List<Ship> ships;
+    private final int xSize;
+    private final int ySize;
 
     public StandardGameControl(List<Ship> ships, int xSize, int ySize) {
         this.ships = ships;
         this.xSize = xSize;
         this.ySize = ySize;
     }
-    
-    
     
     @Override
     public int playSingleGame(IPlayer p1, IPlayer p2) {
@@ -48,9 +46,8 @@ public class StandardGameControl implements IGameControl{
         int b1Targets = b1.remainingTargets();
         int b2Targets = b2.remainingTargets();
         
-        
         //checking if ships were properly placed
-        if (b1Targets != 18 || b2Targets != 18) {  //hardcoded for 18 for now (5,4,4,3,2)
+        if (b1Targets != 18 || b2Targets != 18) {  //hardcoded at 18 for now (5,4,4,3,2)
             if (b1Targets == 18) {
                 return 1;
             }
@@ -60,19 +57,24 @@ public class StandardGameControl implements IGameControl{
             return 0;
         }
         
-        while (true) {
-            b2.placeShot(p1.takeTurn(b2.getValidTargets()));
+        int winner = 0;
+        
+        for (int i = 0; i < xSize * ySize; i++) {
+            b2.placeShot(p1.takeTurn(b2.getValidTargets()));  //hangs here 18/06 - 13:09 (remote testing)
+            
             if (b2.checkForGameOver()) {
-                return 1; //player 1 wins
+                winner = 1;
+                break;
             }
             b1.placeShot(p2.takeTurn(b1.getValidTargets()));
             if (b1.checkForGameOver()) {
-                return 2; //player 2 wins
+                winner = 2;
+                break;
             }
-            
         }
+        System.out.println("PLAYER " + winner + " WINS!");
+        return winner;
         
     }
-    
     
 }

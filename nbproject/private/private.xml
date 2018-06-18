@@ -3,16 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IBoard.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Position.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/BattleshipAgain.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IGameControl.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Ship.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/CellStatus.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/implementations/ListBoard.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/Cell.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/IPlayer.java</file>
-            <file>file:/C:/Users/Peter/Documents/NetBeansProjects/BattleshipAgain/src/battleshipagain/implementations/HashMapBoard.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/StandardGameControl.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/HashMapBoard.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/RandomPlayer.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/RemotePlayer.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/BattleshipConnection.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/PlayerCall.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/TestClient.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/BattleshipServer.java</file>
         </group>
     </open-files>
 </project-private>
