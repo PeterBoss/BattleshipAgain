@@ -45,8 +45,8 @@ public class BattleshipServer implements ConnectionHandler {
             IGameControl game = new StandardGameControl(ships, 10, 10);
             
             IPlayer tmp = p1;
-            
-            new Thread(() -> game.playSingleGame(tmp, p2)).start();
+            System.out.println("Playing...");
+            new Thread(() -> game.playManyGames(tmp, p2, 1000)).start();
             
             p1 = null;
         }

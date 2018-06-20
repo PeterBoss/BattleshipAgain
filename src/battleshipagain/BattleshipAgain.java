@@ -25,8 +25,23 @@ public class BattleshipAgain {
         
         StandardGameControl ctrl = new StandardGameControl(ships, 10, 10);
         
-        int winner = ctrl.playSingleGame(new RandomPlayer(), new RandomPlayer());
-        System.out.println(winner);
+        IPlayer p1 = new RandomPlayer();
+        IPlayer p2 = new RandomPlayer();
+        
+        int[] score = ctrl.playManyGames(p1, p2, 1000);
+        
+        int p1Wins = 0;
+        int p2Wins = 0;
+        
+        for (int i : score) {
+            if (i == 0) continue;
+            if (i == 1) {
+                p1Wins++;
+            } else {
+                p2Wins++;
+            }
+        }
+        System.out.println(p1Wins + " - " + p2Wins);
         
     }
     

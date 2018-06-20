@@ -3,7 +3,6 @@ package battleshipagain.implementations;
 import battleshipagain.IBoard;
 import battleshipagain.IGameControl;
 import battleshipagain.IPlayer;
-import battleshipagain.Position;
 import battleshipagain.Ship;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +59,7 @@ public class StandardGameControl implements IGameControl{
         int winner = 0;
         
         for (int i = 0; i < xSize * ySize; i++) {
-            b2.placeShot(p1.takeTurn(b2.getValidTargets()));  //hangs here 18/06 - 13:09 (remote testing)
+            b2.placeShot(p1.takeTurn(b2.getValidTargets())); 
             
             if (b2.checkForGameOver()) {
                 winner = 1;
@@ -72,8 +71,26 @@ public class StandardGameControl implements IGameControl{
                 break;
             }
         }
-        System.out.println("PLAYER " + winner + " WINS!");
+        
+        p1.endGame(winner);
+        p2.endGame(winner);
+        
         return winner;
+        
+    }
+    
+    @Override
+    public int[] playManyGames(IPlayer p1, IPlayer p2, int gameCount) {
+        
+        int[] scoreBoard = new int[gameCount];
+        
+        for (int i = 0; i < gameCount; i++) {
+            
+            scoreBoard[i] = playSingleGame(p1, p2);
+            
+        }
+        
+        return scoreBoard;
         
     }
     

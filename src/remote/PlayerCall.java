@@ -49,7 +49,7 @@ public class PlayerCall implements IPlayer {
             Logger.getLogger(PlayerCall.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        for (Position p : validTargets) {  //this hideous business is necessary
+        for (Position p : validTargets) {  //this is necessary
             if (p.x == pos.x && p.y == pos.y) {
                 return p;
             }

@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/StandardGameControl.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/BattleshipConnectionImpl.java</file>
             <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/HashMapBoard.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/PlayerCall.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/BattleshipAgain.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/TestClient.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/ProxyPlayer.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/IGameControl.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/StandardGameControl.java</file>
             <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/battleshipagain/implementations/RandomPlayer.java</file>
             <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/RemotePlayer.java</file>
             <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/BattleshipConnection.java</file>
-            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/PlayerCall.java</file>
-            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/TestClient.java</file>
+            <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/Testing.java</file>
             <file>file:/C:/Users/Peter/Desktop/BattleshipAgain/src/remote/BattleshipServer.java</file>
         </group>
     </open-files>

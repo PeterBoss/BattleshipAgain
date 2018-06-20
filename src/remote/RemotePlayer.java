@@ -1,9 +1,7 @@
 package remote;
 
-import battleshipagain.IBoard;
 import battleshipagain.IPlayer;
 import battleshipagain.Position;
-import battleshipagain.Ship;
 import java.io.IOException;
 import java.util.List;
 
