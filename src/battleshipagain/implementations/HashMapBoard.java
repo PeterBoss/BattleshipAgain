@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
  */
 public class HashMapBoard implements IBoard {
 
-    public final int xSize;
-    public final int ySize;
+    private final int xSize;
+    private final int ySize;
     private final HashMap<Position, Integer> board = new HashMap();
 
     public HashMapBoard(int xSize, int ySize) {
@@ -92,6 +92,16 @@ public class HashMapBoard implements IBoard {
                 .filter(e -> e.getValue() == 1)
                 .collect(Collectors.toList())
                 .size();
+    }
+
+    @Override
+    public int sizeX() {
+        return xSize;
+    }
+
+    @Override
+    public int sizeY() {
+        return ySize;
     }
 
 }

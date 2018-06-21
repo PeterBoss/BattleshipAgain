@@ -1,6 +1,7 @@
 
 package battleshipagain;
 
+import adaptations.OldPlayerAdapter;
 import battleshipagain.implementations.RandomPlayer;
 import battleshipagain.implementations.StandardGameControl;
 import java.util.ArrayList;
@@ -26,9 +27,9 @@ public class BattleshipAgain {
         StandardGameControl ctrl = new StandardGameControl(ships, 10, 10);
         
         IPlayer p1 = new RandomPlayer();
-        IPlayer p2 = new RandomPlayer();
+        IPlayer p2 = new OldPlayerAdapter();
         
-        int[] score = ctrl.playManyGames(p1, p2, 1000);
+        int[] score = ctrl.playManyGames(p1, p2, 100);
         
         int p1Wins = 0;
         int p2Wins = 0;

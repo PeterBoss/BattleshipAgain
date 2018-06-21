@@ -12,4 +12,6 @@ public interface IBoard {
     public int placeShot(Position p);
     public List<Position> getValidTargets();
     public int remainingTargets();
+    public int sizeX();
+    public int sizeY();
 }
