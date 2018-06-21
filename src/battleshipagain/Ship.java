@@ -14,6 +14,25 @@ public class Ship {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        switch (size) {
+            case 5:
+                return "Carrier";
+            case 4:
+                return "Battleship";
+            case 3:
+                return "Submarine/Cruiser";
+            case 2:
+                return "Destroyer";
+            default:
+                return "Ship size: " + size;
+           
+        }
+    }
+    
+    
     
     
 }

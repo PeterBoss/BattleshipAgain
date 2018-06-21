@@ -1,17 +1,17 @@
 package battleshipagain.implementations;
 
-import battleshipagain.IBoard;
 import battleshipagain.Position;
 import battleshipagain.Ship;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
+import battleshipagain.Board;
 
 /**
  *
  * @author PeterBoss
  */
-public class HashMapBoard implements IBoard {
+public class HashMapBoard implements Board {
 
     private final int xSize;
     private final int ySize;
@@ -20,7 +20,7 @@ public class HashMapBoard implements IBoard {
     public HashMapBoard(int xSize, int ySize) {
         this.xSize = xSize;
         this.ySize = ySize;
-        for (int i = 0; i < xSize; i++) {
+        for (int i = 0; i < xSize; i++) {  //generates Positions to fill the map. 0 means empty
             for (int j = 0; j < ySize; j++) {
                 board.put(new Position(i, j), 0);
             }
@@ -36,14 +36,14 @@ public class HashMapBoard implements IBoard {
     public void placeShip(Position p, Ship s, Boolean vert) {
         List<Position> candidatePlacement;
 
-        if (vert) {
+        if (vert) { //gets positions for proposed ship placement (ex: a size 5 ship gets a list of 5 Positions)
             candidatePlacement = board.entrySet().stream()
-                    .filter(e -> e.getKey().y == p.y)
-                    .filter(e -> e.getKey().x >= p.x && e.getKey().x < p.x + s.getSize())
-                    .map(e -> e.getKey())
-                    .collect(Collectors.toList());
+                    .filter(e -> e.getKey().y == p.y)  //filters for just positions on vertical plane
+                    .filter(e -> e.getKey().x >= p.x && e.getKey().x < p.x + s.getSize()) //filters for just positions needed to fit the ship
+                    .map(e -> e.getKey()) //gets just the keys (positions)
+                    .collect(Collectors.toList()); //stream collected as a list
         } else {
-            candidatePlacement = board.entrySet().stream()
+            candidatePlacement = board.entrySet().stream()  //same but horizontal
                     .filter(e -> e.getKey().x == p.x)
                     .filter(e -> e.getKey().y >= p.y && e.getKey().y < p.y + s.getSize())
                     .map(e -> e.getKey())
@@ -52,11 +52,7 @@ public class HashMapBoard implements IBoard {
 
         
         candidatePlacement.stream().forEach((pos) -> {
-            if (board.get(pos) == 0) {
-                board.compute(pos, (k, v) -> v == 0 ? 1 : 0);
-            } else {
-                System.out.println("invalid placement");
-            }
+                board.compute(pos, (k, v) -> v == 0 ? 1 : 0); //updates the hashmap, if the player has placed ships on top of each other, they are destroyed where they intersect
         });
     }
 
@@ -68,7 +64,7 @@ public class HashMapBoard implements IBoard {
     }
 
     @Override
-    public List<Position> getValidTargets() {
+    public List<Position> getValidTargets() { //gets a list of all Positions that havent been shot yet
         return board.entrySet().stream()
                 .filter(e -> e.getValue() != 2)
                 .map(e -> e.getKey())
@@ -87,7 +83,7 @@ public class HashMapBoard implements IBoard {
     }
 
     @Override
-    public int remainingTargets() {
+    public int remainingTargets() {  //returns number of live targets (not how many ships! Positions)
         return board.entrySet().stream()
                 .filter(e -> e.getValue() == 1)
                 .collect(Collectors.toList())

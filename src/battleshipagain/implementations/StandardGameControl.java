@@ -1,17 +1,17 @@
 package battleshipagain.implementations;
 
-import battleshipagain.IBoard;
-import battleshipagain.IGameControl;
-import battleshipagain.IPlayer;
 import battleshipagain.Ship;
 import java.util.ArrayList;
 import java.util.List;
+import battleshipagain.BattleshipPlayer;
+import battleshipagain.Board;
+import battleshipagain.GameControl;
 
 /**
  *
  * @author PeterBoss
  */
-public class StandardGameControl implements IGameControl{
+public class StandardGameControl implements GameControl{
 
     
     private final List<Ship> ships;
@@ -25,13 +25,13 @@ public class StandardGameControl implements IGameControl{
     }
     
     @Override
-    public int playSingleGame(IPlayer p1, IPlayer p2) {
+    public int playSingleGame(BattleshipPlayer p1, BattleshipPlayer p2) {
         
-        p1.playGame(1);
-        p2.playGame(2);
+        p1.startGame(1);
+        p2.startGame(2);
         
-        IBoard b1 = new HashMapBoard(xSize, ySize);
-        IBoard b2 = new HashMapBoard(xSize, ySize);
+        Board b1 = new HashMapBoard(xSize, ySize);
+        Board b2 = new HashMapBoard(xSize, ySize);
         
         List<Ship> f1 = new ArrayList();
         List<Ship> f2 = new ArrayList();
@@ -46,11 +46,11 @@ public class StandardGameControl implements IGameControl{
         int b2Targets = b2.remainingTargets();
         
         //checking if ships were properly placed
-        if (b1Targets != 18 || b2Targets != 18) {  //hardcoded at 18 for now (5,4,4,3,2)
-            if (b1Targets == 18) {
+        if (b1Targets != 17 || b2Targets != 17) {  //hardcoded at 17 for now (5,4,3,3,2)
+            if (b1Targets == 17) {
                 return 1;
             }
-            if (b2Targets == 18) {
+            if (b2Targets == 17) {
                 return 2;
             }
             return 0;
@@ -58,7 +58,7 @@ public class StandardGameControl implements IGameControl{
         
         int winner = 0;
         
-        for (int i = 0; i < xSize * ySize; i++) {
+        for (int i = 0; i < xSize * ySize; i++) { // for a 10x10 board, 100 turns should be max
             b2.placeShot(p1.takeTurn(b2.getValidTargets())); 
             
             if (b2.checkForGameOver()) {
@@ -80,7 +80,7 @@ public class StandardGameControl implements IGameControl{
     }
     
     @Override
-    public int[] playManyGames(IPlayer p1, IPlayer p2, int gameCount) {
+    public int[] playManyGames(BattleshipPlayer p1, BattleshipPlayer p2, int gameCount) {
         
         int[] scoreBoard = new int[gameCount];
         

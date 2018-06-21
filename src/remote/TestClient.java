@@ -1,10 +1,11 @@
 package remote;
 
-import battleshipagain.IPlayer;
+import adaptations.OldPlayerAdapter;
 import battleshipagain.implementations.RandomPlayer;
 import dk.tobiasgrundtvig.util.socket.SocketConnection;
 import dk.tobiasgrundtvig.util.socket.impl.SocketConnectionImpl;
 import java.io.IOException;
+import battleshipagain.BattleshipPlayer;
 
 /**
  *
@@ -19,9 +20,9 @@ public class TestClient {
 
         System.out.println("Starting client...");
         SocketConnection conn = new SocketConnectionImpl("localhost", 3456);
-        IPlayer player = new RandomPlayer();
-        RemotePlayer remote = new RemotePlayer(new BattleshipConnectionImpl(conn), player);
-        remote.run();
+        BattleshipPlayer player = new RandomPlayer();
+        PlayerImplementationSide is = new PlayerImplementationSide(new BattleshipConnectionImpl(conn), player);
+        is.run();
         System.out.println("Done!");
 
     }

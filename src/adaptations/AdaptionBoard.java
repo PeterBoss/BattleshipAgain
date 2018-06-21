@@ -5,20 +5,18 @@
  */
 package adaptations;
 
-import battleship.interfaces.Board;
 import battleship.interfaces.Position;
 import battleship.interfaces.Ship;
-import battleshipagain.IBoard;
 
 /**
  *
  * @author Peter
  */
-public class AdaptionBoard implements Board {
+public class AdaptionBoard implements battleship.interfaces.Board {
 
-    private IBoard board;
+    private battleshipagain.Board board;
     
-    AdaptionBoard(IBoard board) {
+    AdaptionBoard(battleshipagain.Board board) {
         this.board = board;
     }
     

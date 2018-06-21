@@ -1,12 +1,12 @@
 package remote;
 
-import battleshipagain.IBoard;
 import battleshipagain.Position;
 import battleshipagain.Ship;
 import dk.tobiasgrundtvig.util.socket.SocketConnection;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import battleshipagain.Board;
 
 public class BattleshipConnectionImpl implements BattleshipConnection {
 
@@ -71,7 +71,12 @@ public class BattleshipConnectionImpl implements BattleshipConnection {
     }
 
     @Override
-    public IBoard readBoard() throws IOException {
+    public Board readBoard() throws IOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void writeBoard(Board board) throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -81,13 +86,7 @@ public class BattleshipConnectionImpl implements BattleshipConnection {
     }
 
     @Override
-    public void writeBoard(IBoard board) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public void writeShips(List<Ship> ships) throws IOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }

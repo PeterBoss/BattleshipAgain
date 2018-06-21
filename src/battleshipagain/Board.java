@@ -6,7 +6,7 @@ import java.util.List;
  *
  * @author PeterBoss
  */
-public interface IBoard {
+public interface Board {
     public boolean checkForGameOver();
     public void placeShip(Position p, Ship s, Boolean vert);
     public int placeShot(Position p);

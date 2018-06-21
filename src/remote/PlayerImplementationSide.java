@@ -1,20 +1,22 @@
 package remote;
 
-import battleshipagain.IPlayer;
 import battleshipagain.Position;
 import java.io.IOException;
 import java.util.List;
+import battleshipagain.BattleshipPlayer;
 
 /**
  *
  * @author PeterBoss
  */
-public class RemotePlayer implements Runnable {
+
+//used by the client to interpret commands coming from the server
+public class PlayerImplementationSide implements Runnable {
 
     private final BattleshipConnection conn;
-    private final IPlayer player;
+    private final BattleshipPlayer player;
 
-    public RemotePlayer(BattleshipConnection conn, IPlayer player) {
+    public PlayerImplementationSide(BattleshipConnection conn, BattleshipPlayer player) {
         this.conn = conn;
         this.player = player;
     }
@@ -27,7 +29,7 @@ public class RemotePlayer implements Runnable {
                 switch (methodName) {
                     case "playGame":
                         int id = conn.readInt();
-                        player.playGame(id);
+                        player.startGame(id);
                         break;
                     case "placeShips":  //later
 //                        IBoard board = conn.readBoard();

@@ -1,27 +1,26 @@
 package battleshipagain.implementations;
 
-import battleshipagain.IBoard;
-import battleshipagain.IPlayer;
 import battleshipagain.Position;
 import battleshipagain.Ship;
 import java.util.List;
 import java.util.Random;
+import battleshipagain.BattleshipPlayer;
+import battleshipagain.Board;
 
 /**
  *
  * @author PeterBoss
  */
-public class RandomPlayer implements IPlayer{
+public class RandomPlayer implements BattleshipPlayer{
 
-    private int playerId;
     
     @Override
-    public void playGame(int playerId) {
-        this.playerId = playerId;
+    public void startGame(int playerId) {
+        System.out.println("You are player " + playerId);
     }
 
     @Override
-    public void placeShips(List<Ship> ships, IBoard board) {
+    public void placeShips(List<Ship> ships, Board board) {
         for (int i = 0; i < ships.size(); i++) {
             board.placeShip(new Position(0, i), ships.get(i), true);
         }

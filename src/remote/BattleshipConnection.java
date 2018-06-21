@@ -5,12 +5,12 @@
  */
 package remote;
 
-import battleshipagain.IBoard;
 import battleshipagain.Position;
 import battleshipagain.Ship;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.List;
+import battleshipagain.Board;
 
 /**
  *
@@ -26,9 +26,9 @@ public interface BattleshipConnection extends Closeable {
 
     public void writeInt(int playerId) throws IOException;
 
-    public IBoard readBoard() throws IOException;
+    public Board readBoard() throws IOException;
     
-    public void writeBoard(IBoard board) throws IOException;
+    public void writeBoard(Board board) throws IOException;
 
     public List<Ship> readShips() throws IOException;
     

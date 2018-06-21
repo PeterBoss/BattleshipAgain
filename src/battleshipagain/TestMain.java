@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author PeterBoss
  */
-public class BattleshipAgain {
+public class TestMain {
 
     
     public static void main(String[] args) {
@@ -19,15 +19,15 @@ public class BattleshipAgain {
         List<Ship> ships = new ArrayList();
         ships.add(new Ship(5));
         ships.add(new Ship(4));
-        ships.add(new Ship(4));
+        ships.add(new Ship(3));
         ships.add(new Ship(3));
         ships.add(new Ship(2));
         
         
         StandardGameControl ctrl = new StandardGameControl(ships, 10, 10);
         
-        IPlayer p1 = new RandomPlayer();
-        IPlayer p2 = new OldPlayerAdapter();
+        BattleshipPlayer p1 = new RandomPlayer();
+        BattleshipPlayer p2 = new RandomPlayer();
         
         int[] score = ctrl.playManyGames(p1, p2, 100);
         
