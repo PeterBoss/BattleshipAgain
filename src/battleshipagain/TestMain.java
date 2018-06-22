@@ -1,8 +1,7 @@
 
 package battleshipagain;
 
-import adaptations.OldPlayerAdapter;
-import battleshipagain.implementations.RandomPlayer;
+import battleshipagain.implementations.RandomPlayerDecorator;
 import battleshipagain.implementations.StandardGameControl;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +25,8 @@ public class TestMain {
         
         StandardGameControl ctrl = new StandardGameControl(ships, 10, 10);
         
-        BattleshipPlayer p1 = new RandomPlayer();
-        BattleshipPlayer p2 = new RandomPlayer();
+        BattleshipPlayer p1 = new RandomPlayerDecorator();
+        BattleshipPlayer p2 = new RandomPlayerDecorator();
         
         int[] score = ctrl.playManyGames(p1, p2, 100);
         

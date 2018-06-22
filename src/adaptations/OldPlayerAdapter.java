@@ -20,7 +20,6 @@ public class OldPlayerAdapter implements BattleshipPlayer {
 
     private TestPlayer player = new TestPlayer();
 
-    ;
 //    private PrintStream originalStream = System.out;
 //    private PrintStream dummyStream = new PrintStream(new OutputStream() {
 //        public void write(int b) {

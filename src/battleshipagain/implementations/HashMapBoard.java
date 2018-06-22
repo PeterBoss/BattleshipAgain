@@ -52,7 +52,7 @@ public class HashMapBoard implements Board {
 
         
         candidatePlacement.stream().forEach((pos) -> {
-                board.compute(pos, (k, v) -> v == 0 ? 1 : 0); //updates the hashmap, if the player has placed ships on top of each other, they are destroyed where they intersect
+                board.compute(pos, (k, v) -> v == 0 ? 1 : 2); //updates the hashmap, if the player has placed ships on top of each other, they are destroyed where they intersect
         });
     }
 
